@@ -1,5 +1,5 @@
 import React from 'react';
-import DayCard from './DayCard';
+import DayCard from '../DayCard/DayCard';
 
 function Week ({firstDay, month, year}) {
   const daysPerWeek = 7;
@@ -20,7 +20,8 @@ function Week ({firstDay, month, year}) {
     }
   }
   return (
-    <div className='flex flex-row flex-nowrap' >
+    <div data-testid='week'
+         className='flex flex-row flex-nowrap'>
       {daysCards}
     </div>
   );

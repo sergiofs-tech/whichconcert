@@ -1,5 +1,5 @@
 import React  from 'react';
-import Week from '../Week';
+import Week from '../Week/Week';
 
 function Month ({month, year}) {
   const currentDate = new Date(year, month, 1);
@@ -9,7 +9,11 @@ function Month ({month, year}) {
   const weeksArray = []
 
   for (let i = 1; i <= daysInMonth + firstWeekDay; i += daysPerWeek) {
-    weeksArray.push(<Week key={i} month={month} year={year} firstDay={i - firstWeekDay}/>);
+    weeksArray.push(
+      <Week key={i}
+            month={month}
+            year={year}
+            firstDay={i - firstWeekDay}/>);
   }
   return (
     <div data-testid='month'>
